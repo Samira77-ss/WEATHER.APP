@@ -40,7 +40,17 @@ function displayWeatherCondition(response) {
   );
   iconElement.setAttribute("alt", response.data.condition.description);
 }
+function search(city) {
+  let apiKey = "bo2f99f4b4829bb67942fdad243367t0";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
 
-let apiKey = "bo2f99f4b4829bb67942fdad243367t0";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query={query}&key=${apiKey}`;
-axios.get(apiUrl).then(displayWeatherCondition);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+search("New York");
