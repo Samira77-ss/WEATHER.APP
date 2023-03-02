@@ -19,7 +19,6 @@ function formatDay(timestamp) {
   return days[day];
 }
 function displayWeatherCondition(response) {
-  console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   let dateElement = document.querySelector("#date");
   let cityElement = document.querySelector("#city");
@@ -42,7 +41,7 @@ function displayWeatherCondition(response) {
 }
 function search(city) {
   let apiKey = "bo2f99f4b4829bb67942fdad243367t0";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
@@ -53,4 +52,4 @@ function handleSubmit(event) {
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-search("New York");
+search("Alaska");
