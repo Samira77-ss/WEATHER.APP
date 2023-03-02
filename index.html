@@ -47,21 +47,20 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <div class="d-flex weather-temperature">
-                <img
+                <span class="icon"><img
                   src=""
                   alt="
                 clear"
                   id="icon"
-                />
-                <div>
+                  width="200"
+                /></span>
+                <div class="temperature">
                   <strong id="temperature"></strong
                   ><span class="units">°C</span>
-                </div>
               </div>
             </div>
             <div class="col-6">
-              <ul>
+              <ul class="humidity-wind">
                 <li>Himidity: <span id="humidity"></span>%</li>
                 <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
@@ -70,12 +69,14 @@
           <div class="weather-forecast" id="forecast"></div>
         </div>
         <small>
+          <p>
           <a href="https://github.com/Samira77-ss/WEATHER.APP" target="_blank"
             >Open-source code</a
           >
           by Samira Seyfi and hosted on
           <a href="https://calm-axolotl-e81850.netlify.app/">Netlify</a>
         </small>
+      </p>
       </div>
     </div>
     <script src="src/index.js"></script>
